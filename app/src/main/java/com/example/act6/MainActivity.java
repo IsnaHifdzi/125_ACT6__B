@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i<daftarTeman.size();i++){
             Teman teman=new Teman();
 
-            teman.setId(daftarTeman.get(i).get("id").toString());
-            teman.setNama(daftarTeman.get(i).get("nama").toString());
-            teman.setTelpon(daftarTeman.get(i).get("telpon").toString());
+            teman.setId(daftarTeman.get(i).get("id"));
+            teman.setNama(daftarTeman.get(i).get("nama"));
+            teman.setTelpon(daftarTeman.get(i).get("telpon"));
             //pindahkan dari teman kedalam arraylistteman di adapter
             temanArrayList.add(teman);
         }

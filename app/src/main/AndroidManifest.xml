@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Act6">
         <activity
+            android:name=".Edit_teman"
+            android:exported="false" />
+        <activity
             android:name=".TemanBaru"
             android:exported="false" />
         <activity

@@ -37,19 +37,20 @@ public class TemanBaru extends AppCompatActivity {
                     nm = tNama.getText().toString();
                     tlp =tTelpon.getText().toString();
 
-                    HashMap<String,String> qvlues = new HashMap<>();
-                    qvlues.put("nama",nm);
-                    qvlues.put("telpon",tlp);
+                    HashMap<String,String> vlues = new HashMap<>();
 
-                    controller.insertData(qvlues);
+                    vlues.put("nama",nm);
+                    vlues.put("telpon",tlp);
+
+                    controller.insertData(vlues);
                     callHome();
                 }
             }
         });
     }
     public void callHome(){
-        Intent intent = new Intent(TemanBaru.this,MainActivity.class);
-        startActivity(intent);
+        Intent i = new Intent(TemanBaru.this,MainActivity.class);
+        startActivity(i);
         finish();
     }
 }

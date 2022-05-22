@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Act6">
         <activity
-            android:name=".Edit_teman"
+            android:name=".EditTeman"
             android:exported="false" />
         <activity
             android:name=".TemanBaru"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.act6.MainActivity$MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

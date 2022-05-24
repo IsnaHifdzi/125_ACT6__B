@@ -12,12 +12,16 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class EditTeman extends Activity {
     TextView idText;
@@ -26,7 +30,7 @@ public class EditTeman extends Activity {
     String id, nm, tlp, namaEd, telponEd;
     int sukses;
 
-    private  static  String url_update = "http://10.0.2.2/umyTI/updatetm.php";
+    private  static  String url_update = "https://20200140125.praktikumtiumy.com/updatet.php";
     private  static  final  String TAG = EditTeman.class.getSimpleName();
     private  static  final  String TAG_SUCCES = "success";
 
@@ -64,13 +68,13 @@ public class EditTeman extends Activity {
         telponEd = edTelpon.getText().toString();
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringReq = new StringRequest(Request.Method.POST, url_update, new Reponse.Listener<String>(){
+        StringRequest stringReq = new StringRequest(Request.Method.POST, url_update, new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
                 Log.d(TAG, "Respon: " + response.toString());
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    sukses = jsonObject.getInt(TAG_SUCCESS);
+                    sukses = jsonObject.getInt(TAG_SUCCES);
                     if (sukses == 1) {
                         Toast.makeText(EditTeman.this, "SUkses mengedit data", Toast.LENGTH_SHORT).show();
                     } else {
@@ -108,7 +112,5 @@ public class EditTeman extends Activity {
         finish();
     }
 }
-        }
-    }
-}
+
 
